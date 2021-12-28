@@ -1,3 +1,4 @@
+<!--一个文件包含完整版的todo-->
 <template>
   <div>
     <!-- 新增todo -->
@@ -12,15 +13,18 @@
         <li v-for="todo in filteredTodos" :key="todo.id" :class="{completed: todo.completed, editing: todo === editedTodo}">
           <div class="view">
             <input type="checkbox" v-model="todo.completed" />
-            <label @dblclick="editTodo(todo)">{{todo.title}}</label>
+            <label @dblclick="editTodo(todo)" class="item-label">{{todo.title}}</label>
             <button @click="removeTodo(todo)">X</button>
           </div>
           <!-- 编辑待办 自定义指令设置焦点 -->
-          <input type="text" class="edit" v-model="todo.title" 
-            v-todo-focus="todo === editedTodo"
-            @blur="doneEdit(todo)" 
-            @keyup.enter="doneEdit(todo)" 
-            @keyup.escape="cancelEdit(todo)" />
+          
+          <div>
+            <input type="text" class="edit" v-model="todo.title" 
+              v-todo-focus="todo === editedTodo"
+              @blur="doneEdit(todo)" 
+              @keyup.enter="doneEdit(todo)" 
+              @keyup.escape="cancelEdit(todo)" />
+          </div>
         </li>
       </ul>
 
@@ -146,5 +150,15 @@ export default {
 }
 .filters > span.selected {
   border-color: skyblue;
+}
+
+li { 
+  text-align: center;
+}
+.item-label {
+  width: 160px;
+  padding: 10px;
+  display: inline-block;
+  text-align: left;
 }
 </style>

@@ -2,6 +2,7 @@ import { createApp, createRenderer, h } from 'vue'
 import App from './App.vue'
 import './index.css'
 import CanvasApp from './CanvasApp.vue';
+import EditTodo from './components/todos/EditTodo.vue';
 
 // createApp浏览器平台的渲染器
 createApp(App)
@@ -10,6 +11,7 @@ createApp(App)
       return h('div', 'I am comp');
     }
   })
+  .component('EditTodo', EditTodo)
   .directive('hightlight', {
     beforeMount(el, binding, vnode) {
       el.style.backgroundColor = binding.value

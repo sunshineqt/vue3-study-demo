@@ -1,5 +1,7 @@
 <template>
   <div>
+    <!-- 组件形式todos -->
+    <TodosComp />
     <img alt="Vue logo" src="./assets/logo.png" />
     <Todos />
 
@@ -22,6 +24,8 @@
 </template>
 
 <script>
+import TodosComp from "./components/todos/Todos.vue";
+
 import Todos from "./components/Todos.vue";
 import HelloWorld from './components/HelloWorld.vue';
 import Reactive from './components/Reactive.vue';
@@ -33,6 +37,7 @@ import Emits from './components/Emits.vue';
 export default {
   name: 'App',
   components: {
+    TodosComp,
     Todos,
     HelloWorld,
     Reactive,
