@@ -1,6 +1,8 @@
 <template>
   <div>
     <img alt="Vue logo" src="./assets/logo.png" />
+    <Todos />
+
     <HelloWorld msg="Hello Vue 3.0 + Vite" />
     <!-- reactive -->
     <!-- <Reactive /> -->
@@ -20,6 +22,7 @@
 </template>
 
 <script>
+import Todos from "./components/Todos.vue";
 import HelloWorld from './components/HelloWorld.vue';
 import Reactive from './components/Reactive.vue';
 import ReactiveSetup from './components/ReactiveSetup.vue';
@@ -30,6 +33,7 @@ import Emits from './components/Emits.vue';
 export default {
   name: 'App',
   components: {
+    Todos,
     HelloWorld,
     Reactive,
     ReactiveSetup,

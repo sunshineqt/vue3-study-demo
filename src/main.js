@@ -1,10 +1,21 @@
-import { createApp, createRenderer } from 'vue'
+import { createApp, createRenderer, h } from 'vue'
 import App from './App.vue'
 import './index.css'
 import CanvasApp from './CanvasApp.vue';
 
 // createApp浏览器平台的渲染器
-createApp(App).mount('#app')
+createApp(App)
+  .component('comp', {
+    render() {
+      return h('div', 'I am comp');
+    }
+  })
+  .directive('hightlight', {
+    beforeMount(el, binding, vnode) {
+      el.style.backgroundColor = binding.value
+    }
+  })
+  .mount('#app')
 
 const nodeOps = {
   createElement(tag, isSVG, is) {
