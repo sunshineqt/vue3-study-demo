@@ -7,6 +7,8 @@ npm install
 npm run dev
 ```
 
+>- vite1.0.0-rc.13
+
 
 
 #### 参考 & 感谢 各路大神
